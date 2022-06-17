@@ -96,57 +96,67 @@ body {
   box-shadow: 0px 20px 20px #b6b6b6;
 }
 
+#check {
+  visibility: hidden;
+  display: none;
+}
+
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  background: transparent;
-  transition: all 0.5s;
+  z-index: 9999;
+  transition: all 0.8s;
 }
 
 header.sticky {
-  padding: 5px 100px;
-  background-color: #fff;
+  background: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
-header.sticky .navbar-brand img {
+header.sticky .logo {
+  display: none;
+}
+
+header .toggle {
   display: none;
 }
 
 header nav {
-  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-header nav .navbar-brand img {
+header nav .logo img {
   width: 80px;
 }
 
-header nav .navbar-collapse .navbar-nav .nav-link {
-  color: #181818;
-  font-size: 13px;
-  font-weight: 600;
-  padding-right: 50px;
-  align-self: center;
-  transition: all 0.1s linear;
+header nav .nav-menu {
+  margin-left: auto;
 }
 
-header nav .navbar-collapse .navbar-nav .nav-link:hover {
+header nav .nav-menu a {
+  text-decoration: none;
+  color: #181818;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-right: 50px;
+  transition: all 0.5s;
+}
+
+header nav .nav-menu a:hover {
   color: #b61984;
 }
 
-header nav .icon {
-  align-self: center;
-}
-
 header nav .icon a {
-  font-size: 14.625px;
+  font-size: 13.5px;
   color: #181818;
-  margin-left: 5px;
-  transition: all 0.2s linear;
+  margin-left: 10px;
+  transition: all 0.5s;
 }
 
 header nav .icon a:hover {
@@ -154,65 +164,91 @@ header nav .icon a:hover {
 }
 
 @media screen and (max-width: 1199.98px) {
-  header {
-    background-color: #ffffff;
+  #check:checked ~ #main header nav {
+    transform: translateX(0);
   }
-  header.sticky {
-    padding-left: 0;
-    padding-right: 0;
+  #check:checked ~ #main header span {
+    left: 250px;
   }
-  header.sticky .navbar-brand img {
+  #check:checked ~ #main header .open {
+    display: none;
+  }
+  #main header {
+    height: 50px;
+    background: #ffffff;
+  }
+  #main header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("/img/crest.png") center/cover no-repeat;
+    width: 50px;
+    height: 100%;
+    margin: 0 60px;
+  }
+  #main header.sticky {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 50px;
+  }
+  #main header.sticky .logo {
     display: block;
-    width: 50px;
   }
-  header.sticky .navbar-toggler {
-    margin-right: auto;
+  #main header.sticky .toggle {
+    display: block;
+    line-height: 50px;
   }
-  header.sticky .navbar .navbar-collapse .navbar-nav .nav-link,
-  header.sticky .navbar .navbar-collapse .navbar-nav .btn,
-  header.sticky .navbar .navbar-collapse .navbar-nav .icon {
-    align-self: center;
+  #main header.sticky .toggle span {
+    position: absolute;
+    top: 8px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+    background: #ffffff;
+    color: #b61984;
   }
-  header .navbar {
-    padding: 0;
+  #main header .toggle {
+    display: block;
+    line-height: 50px;
   }
-  header .navbar .navbar-brand img {
-    width: 50px;
+  #main header .toggle span {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+    background: #ffffff;
+    color: #b61984;
   }
-  header .navbar .navbar-collapse .navbar-nav .nav-link {
-    align-self: flex-end;
-    padding-right: 0;
+  #main header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 100vh;
+    background: #ffffff;
+    text-align: center;
+    transition: all 0.5s;
+    transform: translateX(-250px);
   }
-  header .navbar .btn {
-    width: 180px;
-    align-self: flex-end;
+  #main header nav .nav-menu {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 30px;
   }
-  header .navbar .icon {
-    align-self: flex-end;
+  #main header nav .nav-menu a {
     margin: 10px 0;
   }
-}
-
-@media screen and (max-width: 575.98px) {
-  header {
-    background-color: #ffffff;
-  }
-  header.sticky {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  header.sticky .navbar-brand img {
-    display: block;
-    width: 50px;
-  }
-  header.sticky .navbar-toggler {
-    margin: 0 0 0 auto;
-  }
-  header.sticky .navbar .navbar-collapse .navbar-nav .nav-link,
-  header.sticky .navbar .navbar-collapse .navbar-nav .btn,
-  header.sticky .navbar .navbar-collapse .navbar-nav .icon {
-    align-self: center;
+  #main header nav .icon {
+    margin-top: 10px;
   }
 }
 

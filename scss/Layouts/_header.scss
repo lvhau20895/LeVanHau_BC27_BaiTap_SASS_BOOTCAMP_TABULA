@@ -1,133 +1,159 @@
+#check {
+	visibility: hidden;
+	display: none;
+}
+
 header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 1000;
-	background: transparent;
-	transition: all 0.5s;
-	// scroll nav
+	z-index: 9999;
+	transition: all 0.8s;
 	&.sticky {
-		padding: 5px 100px;
-		background-color: #fff;
+		background: $color-white;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		transition: all 0.5s;
-		& .navbar-brand img {
+		height: 80px;
+		display: flex;
+		align-items: center;
+		& .logo {
 			display: none;
 		}
 	}
 
-	& nav {
-		padding: 0;
-		// nav logo
-		& .navbar-brand img {
+	.toggle {
+		display: none;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+
+		.logo img {
 			width: 80px;
 		}
 
-		// nav menu
-		& .navbar-collapse .navbar-nav .nav-link {
-			color: $color-dark-1;
-			font-size: $fs-2;
-			font-weight: $fw-2;
-			padding-right: 50px;
-			align-self: center;
-			transition: all 0.1s linear;
-			&:hover {
-				color: $color-violet;
-			}
-		}
-
-		// nav icon
-		& .icon {
-			align-self: center;
-			& a {
-				font-size: $fs-4;
+		.nav-menu {
+			margin-left: auto;
+			a {
+				text-decoration: none;
 				color: $color-dark-1;
-				margin-left: 5px;
-				transition: all 0.2s linear;
+				font-size: $fs-3;
+				font-weight: $fw-2;
+				margin-right: 50px;
+				transition: all 0.5s;
 				&:hover {
 					color: $color-violet;
 				}
 			}
 		}
+
+		.icon a {
+			font-size: $fs-3;
+			color: $color-dark-1;
+			margin-left: 10px;
+			transition: all 0.5s;
+			&:hover {
+				color: $color-violet;
+			}
+		}
 	}
 }
 
-// Responsive
+// responsive
 // xl
 @include responsive("extra-large-down") {
-	header {
-		background-color: $color-white;
-		&.sticky {
-			padding-left: 0;
-			padding-right: 0;
-			// nav logo
-			& .navbar-brand img {
-				display: block;
+	#check:checked ~ #main header nav {
+		transform: translateX(0);
+	}
+
+	#check:checked ~ #main header span {
+		left: 250px;
+	}
+
+	#check:checked ~ #main header .open {
+		display: none;
+	}
+
+	#main {
+		header {
+			height: 50px;
+			background: $color-white;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url("/img/crest.png") center / cover no-repeat;
 				width: 50px;
+				height: 100%;
+				margin: 0 60px;
 			}
-
-			& .navbar-toggler {
-				margin-right: auto;
-			}
-
-			& .navbar .navbar-collapse .navbar-nav {
-				& .nav-link,
-				.btn,
-				.icon {
-					align-self: center;
+			&.sticky {
+				background: $color-white;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				height: 50px;
+				& .logo {
+					display: block;
+				}
+				.toggle {
+					display: block;
+					line-height: 50px;
+					span {
+						position: absolute;
+						top: 8px;
+						width: 40px;
+						height: 40px;
+						text-align: center;
+						line-height: 40px;
+						font-size: 30px;
+						background: $color-white;
+						color: $color-violet;
+					}
 				}
 			}
-		}
 
-		& .navbar {
-			padding: 0;
-			// nav logo
-			& .navbar-brand img {
-				width: 50px;
-			}
-
-			& .navbar-collapse .navbar-nav .nav-link {
-				align-self: flex-end;
-				padding-right: 0;
-			}
-
-			& .btn {
-				width: 180px;
-				align-self: flex-end;
-				margin: 0;
-			}
-
-			& .icon {
-				align-self: flex-end;
-				margin: 10px 0;
-			}
-		}
-	}
-}
-
-// sm
-@include responsive("small-down") {
-	header {
-		background-color: $color-white;
-		&.sticky {
-			padding-left: 0;
-			padding-right: 0;
-			// nav logo
-			& .navbar-brand img {
+			.toggle {
 				display: block;
-				width: 50px;
+				line-height: 50px;
+				span {
+					position: absolute;
+					width: 40px;
+					height: 40px;
+					text-align: center;
+					line-height: 40px;
+					font-size: 30px;
+					background: $color-white;
+					color: $color-violet;
+				}
 			}
 
-			& .navbar-toggler {
-				margin: 0 0 0 auto;
-			}
+			nav {
+				position: absolute;
+				top: 0;
+				left: 0;
+				flex-direction: column;
+				align-items: center;
+				width: 250px;
+				height: 100vh;
+				background: $color-white;
+				text-align: center;
+				transition: all 0.5s;
+				transform: translateX(-250px);
 
-			& .navbar .navbar-collapse .navbar-nav {
-				& .nav-link,
-				.btn,
+				.nav-menu {
+					margin: 0;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin: 20px 0 30px;
+					a {
+						margin: 10px 0;
+					}
+				}
+
 				.icon {
-					align-self: center;
+					margin-top: 10px;
 				}
 			}
 		}
