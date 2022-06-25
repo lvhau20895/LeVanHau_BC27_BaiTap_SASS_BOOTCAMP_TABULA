@@ -6,7 +6,7 @@
 
 html,
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -36,9 +36,8 @@ body {
   font-weight: 500;
   background-color: #ffffff;
   color: #ffffff;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
-
 .btn:hover {
   color: #b61984;
   border: 1px solid #b61984;
@@ -51,39 +50,32 @@ body {
   text-align: center;
   transition: all 0.5s;
 }
-
 .card .card-image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
 }
-
 .card .card-image .card-img-top {
   transform: scale(1);
   transition: all 1.2s;
 }
-
 .card .card-image .card-img-top:hover {
   transform: scale(1.05);
 }
-
 .card .card-body {
   padding: 0 30px 30px;
 }
-
 .card .card-sub-title {
   color: #b61984;
   font-size: 11.25px;
   font-weight: 600;
   margin-top: 30px;
 }
-
 .card .card-title {
   color: #191919;
   font-size: 23.25px;
   font-weight: 700;
 }
-
 .card .card-text {
   color: #181818;
   font-size: 15px;
@@ -91,7 +83,6 @@ body {
   line-height: 27px;
   font-family: "Roboto", sans-serif;
 }
-
 .card:hover {
   box-shadow: 0px 20px 20px #b6b6b6;
 }
@@ -109,7 +100,6 @@ header {
   z-index: 9999;
   transition: all 0.8s;
 }
-
 header.sticky {
   background: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -117,28 +107,22 @@ header.sticky {
   display: flex;
   align-items: center;
 }
-
 header.sticky .logo {
   display: none;
 }
-
 header .toggle {
   display: none;
 }
-
 header nav {
   display: flex;
   align-items: center;
 }
-
 header nav .logo img {
   width: 80px;
 }
-
 header nav .nav-menu {
   margin-left: auto;
 }
-
 header nav .nav-menu a {
   text-decoration: none;
   color: #181818;
@@ -147,18 +131,15 @@ header nav .nav-menu a {
   margin-right: 50px;
   transition: all 0.5s;
 }
-
 header nav .nav-menu a:hover {
   color: #b61984;
 }
-
 header nav .icon a {
   font-size: 13.5px;
   color: #181818;
   margin-left: 10px;
   transition: all 0.5s;
 }
-
 header nav .icon a:hover {
   color: #b61984;
 }
@@ -167,15 +148,19 @@ header nav .icon a:hover {
   #check:checked ~ #main header nav {
     transform: translateX(0);
   }
+
   #check:checked ~ #main header span {
     left: 250px;
   }
+
   #check:checked ~ #main header .open {
     display: none;
   }
+
   #check:checked ~ #main {
     left: 250px;
   }
+
   #main {
     position: relative;
     left: 0;
@@ -259,18 +244,15 @@ header nav .icon a:hover {
     margin-top: 10px;
   }
 }
-
 .carousel {
   margin: -130px 0 20px;
 }
-
 .carousel .sub_title {
   color: #b61984;
   font-size: 16.5px;
   font-weight: 600;
   margin-bottom: 5px;
 }
-
 .carousel .title {
   color: #191919;
   font-size: 57px;
@@ -287,7 +269,6 @@ header nav .icon a:hover {
     font-weight: 700;
   }
 }
-
 @media screen and (max-width: 991.98px) {
   .carousel {
     margin: 10px 0 120px;
@@ -304,13 +285,11 @@ header nav .icon a:hover {
     font-weight: 700;
   }
 }
-
 @media screen and (max-width: 767.98px) {
   .carousel {
     margin: 30px 0 150px;
   }
 }
-
 @media screen and (max-width: 575.98px) {
   .carousel {
     margin: 30px 0 180px;
@@ -321,11 +300,9 @@ header nav .icon a:hover {
     font-weight: 700;
   }
 }
-
 .info {
   background: #dcd1f0;
 }
-
 .info .col-lg-3 {
   padding: 20px;
   z-index: 5;
@@ -336,7 +313,6 @@ header nav .icon a:hover {
     padding: 0 15px 30px;
   }
 }
-
 @media screen and (max-width: 991.98px) {
   .info .card-body {
     padding: 30px;
@@ -345,59 +321,49 @@ header nav .icon a:hover {
     margin-top: 5px;
   }
 }
-
 @media screen and (max-width: 767.98px) {
   .info .card-text {
     line-height: 1.5em;
   }
 }
-
 @media screen and (max-width: 575.98px) {
   .info .card-text {
     font-size: 13px;
   }
 }
-
 .contact {
   margin-top: 100px;
 }
-
 .contact .img-contact img {
   width: 100%;
   height: 550px;
 }
-
 .contact form {
-  background-color: white;
-  box-shadow: 0 30px 30px -10px #00000033;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
   padding: 40px 25px;
   border: none;
   border-radius: 20px;
 }
-
 .contact form .title-contact {
   color: #191919;
   font-size: 35px;
   font-weight: 700;
   text-align: center;
 }
-
 .contact form .form-control {
   padding: 0 35px;
   height: 40px;
   border-radius: 20px;
   font-size: 13px;
 }
-
 .contact form .form-control:focus {
   box-shadow: unset;
-  border-color: #0000004d;
+  border-color: rgba(0, 0, 0, 0.3019607843);
 }
-
 .contact form .text {
   height: 80px;
 }
-
 .contact form .form-icon {
   display: inline-block;
   font-size: 13px;
@@ -405,7 +371,6 @@ header nav .icon a:hover {
   z-index: 1;
   color: #b61984;
 }
-
 .contact form .btn {
   margin: 50px 0 20px;
   padding: 15px 60px;
@@ -425,7 +390,6 @@ header nav .icon a:hover {
     text-align: left;
   }
 }
-
 @media screen and (max-width: 991.98px) {
   .contact {
     margin: 300px 0 110px;
@@ -444,7 +408,6 @@ header nav .icon a:hover {
     text-align: left;
   }
 }
-
 @media screen and (max-width: 767.98px) {
   .contact {
     margin: 300px 0 160px;
@@ -463,8 +426,8 @@ header nav .icon a:hover {
     text-align: left;
   }
   .contact form .form-icon,
-  .contact form .form-control,
-  .contact form .btn {
+.contact form .form-control,
+.contact form .btn {
     font-size: 11px;
   }
   .contact form .btn {
@@ -475,7 +438,6 @@ header nav .icon a:hover {
     width: 100%;
   }
 }
-
 @media screen and (max-width: 575.98px) {
   .contact {
     margin-top: 350px;
@@ -488,7 +450,7 @@ header nav .icon a:hover {
     height: auto;
   }
   .contact form .form-icon,
-  .contact form .form-control {
+.contact form .form-control {
     font-size: 10px;
   }
   .contact form .btn {
@@ -496,63 +458,51 @@ header nav .icon a:hover {
     font-size: 10px;
   }
 }
-
 footer {
   background: url("/img/footer_background.jpg") center/cover no-repeat;
   width: 100%;
   height: 530px;
   color: #fff;
 }
-
 footer .col-lg-3 {
   margin-top: 100px;
 }
-
 footer .title-footer {
   color: #ffffff;
   font-size: 23.25px;
   font-weight: 700;
   margin-bottom: 30px;
 }
-
 footer .footer-contact {
   font-family: "Roboto", sans-serif;
 }
-
 footer .footer-contact .icon-footer-contact {
   display: inline-block;
   width: 20px;
   height: 20px;
   margin-bottom: 10px;
 }
-
 footer .footer-contact .icon-footer-contact i {
   font-size: 15px;
 }
-
 footer .footer-contact .txt-info {
   font-size: 13.5px;
 }
-
 footer .social-network {
   margin-top: 20px;
 }
-
 footer .social-network i {
   margin-right: 12px;
   transition: all 0.1s linear;
   cursor: pointer;
 }
-
 footer .social-network i:hover {
   color: #181818;
 }
-
 footer ul li {
   list-style: none;
   margin-bottom: 15px;
 }
-
 footer ul li a {
   font-family: "Roboto", sans-serif;
   font-size: 13.5px;
@@ -560,22 +510,18 @@ footer ul li a {
   text-decoration: none;
   transition: all 0.5s;
 }
-
 footer ul li a:hover {
   opacity: 0.5;
   text-decoration: none;
   color: #ffffff;
 }
-
 footer .newsletter {
   width: 90%;
   margin-top: 90px;
 }
-
 footer .newsletter .txt-email input::placeholder {
   color: #ffffff;
 }
-
 footer .newsletter .txt-email input {
   text-align: center;
   background: transparent;
@@ -585,12 +531,10 @@ footer .newsletter .txt-email input {
   font-size: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 footer .newsletter .txt-email input:focus {
-  border-color: white;
+  border-color: rgb(255, 255, 255);
   box-shadow: none;
 }
-
 footer .newsletter .subscribe .btn {
   width: 100%;
   height: 50px;
@@ -602,7 +546,6 @@ footer .newsletter .subscribe .btn {
   font-weight: 600;
   letter-spacing: 1px;
 }
-
 footer .newsletter .subscribe .btn:hover {
   color: #ffffff;
   border: 1px solid #ffffff;
@@ -615,21 +558,19 @@ footer .newsletter .subscribe .btn:hover {
     padding-top: 50px;
   }
 }
-
 @media screen and (max-width: 767.98px) {
   footer {
     height: 850px;
     padding-top: 20px;
   }
 }
-
 @media screen and (max-width: 575.98px) {
   footer {
     height: 1400px;
     padding-top: 70px;
   }
   footer .icon-footer-contact i,
-  footer .txt-info {
+footer .txt-info {
     font-size: 12px;
   }
   footer ul li a {
@@ -638,5 +579,4 @@ footer .newsletter .subscribe .btn:hover {
   footer .newsletter .subscribe .btn {
     font-size: 10px;
   }
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
